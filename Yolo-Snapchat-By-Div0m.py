@@ -1,9 +1,9 @@
-
-import os,requests
-x = os.popen("wmic csproduct get UUID").read().split()[-1]
-print(x)
+import socket,requests
+hostname = socket.gethostname()
+local_ip = socket.gethostbyname(hostname)
+print(local_ip)
 req = requests.get('https://pastebin.com/mRqFXTH9').text
-if x in req:
+if local_ip in req:
     pass
 else:
     print("-------------------------------------")
@@ -11,6 +11,7 @@ else:
     print("-------------------------------------")
     print("Send The Id to Me Insta = Jev0m Telegram = Div0m")
     exit()
+
 
 import requests
 import sys
